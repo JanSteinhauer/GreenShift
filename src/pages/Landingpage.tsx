@@ -21,13 +21,17 @@ const Navbar = styled.nav`
 `;
 
 const NavLogo = styled.img`
-  width: 120px;
+  width: 50px;
   height: auto;
+  
 `;
 
 const NavLinks = styled.ul`
   display: flex;
   list-style: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
 `;
 
 const NavLink = styled.li`
@@ -127,6 +131,14 @@ const AiChatWrapper = styled.div`
 //   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 // `;
 
+const MotionLink = styled(motion.a)`
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  &:hover {
+    color: #a5d6a7;
+  }
+`;
 
 const Logo = styled(motion.img)`
   width: 150px;
@@ -142,16 +154,40 @@ const LandingPage = () => {
         <NavLogo src={logo} alt="GreenShift AI Logo" />
         <NavLinks>
           <NavLink>
-            <a href="#home">Home</a>
+            <MotionLink 
+              href="#home" 
+              whileHover={{ scale: 1.1 }}  // Subtle pop effect on hover
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              Home
+            </MotionLink>
           </NavLink>
           <NavLink>
-            <a href="#about">About</a>
+            <MotionLink 
+              href="#about" 
+              whileHover={{ scale: 1.1 }}  // Subtle pop effect on hover
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              About
+            </MotionLink>
           </NavLink>
           <NavLink>
-            <a href="#services">Services</a>
+            <MotionLink 
+              href="#services" 
+              whileHover={{ scale: 1.1 }}  // Subtle pop effect on hover
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              Services
+            </MotionLink>
           </NavLink>
           <NavLink>
-            <a href="#contact">Contact</a>
+            <MotionLink 
+              href="#contact" 
+              whileHover={{ scale: 1.1 }}  // Subtle pop effect on hover
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              Contact
+            </MotionLink>
           </NavLink>
         </NavLinks>
       </Navbar>

@@ -11,8 +11,14 @@ body{
   background-color: #000 !important;
   border-top-left-radius: 15px !important;
   border-bottom-left-radius: 15px !important;
-
+  @media (max-width: 768px) {
+    
+    border-bottom-left-radius: 0px !important;
+    
+  }
 }
+
+
 .gpt-chat-area{
   background-color: #343541 !important;
 }
