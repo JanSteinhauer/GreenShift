@@ -158,16 +158,17 @@ const LandingPage = () => {
 
       {/* Main Content */}
       <MainContent>
+      {/* <GPTChat /> */}
         {/* Hero Section */}
         <Section id="home">
        
-          <Logo
+          {/* <Logo
             src={logo}
             alt="GreenShift AI Logo"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
-          />
+          /> */}
           <Header
             initial={{ y: -100 }}
             animate={{ y: 0 }}

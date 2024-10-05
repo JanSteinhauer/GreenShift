@@ -67,7 +67,7 @@ function GPTChat() {
             <div className="input-group input-group-lg mb-3 gpt-message-box">
               <input type="text" 
                 className="form-control gpt-form-control" 
-                placeholder="Message ChatGPT..." 
+                placeholder="Message GreenshiftAI..." 
                 onChange={(e) => setUserMessage(e.target.value)}
               />
               <div className="input-group-append gpt-submit">

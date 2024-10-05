@@ -5,7 +5,7 @@ const MessageBox = () => {
         <div className="input-group input-group-lg mb-3 gpt-message-box">
             <input type="text" 
                 className="form-control gpt-form-control" 
-                placeholder="Message ChatGPT..." 
+                placeholder="Message GreenshiftAI..." 
             />
             <div className="input-group-append gpt-submit">
                 <button className="btn gpt-btn-gray" type="button">

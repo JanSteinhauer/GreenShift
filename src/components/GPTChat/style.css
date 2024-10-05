@@ -9,6 +9,9 @@ body{
 }
 .gpt-sidebar{
   background-color: #000 !important;
+  border-top-left-radius: 15px !important;
+  border-bottom-left-radius: 15px !important;
+
 }
 .gpt-chat-area{
   background-color: #343541 !important;
@@ -27,6 +30,17 @@ body{
   padding: 14px 5px !important;
   border-radius: 10rem;
 }
+.gpt-circleL{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  width: 70px;
+  height: 70px;
+  padding: 14px 5px !important;
+  border-radius: 10rem;
+}
+
+
 .gpt-circle-2{
   background-color: #fff !important;
   /* margin-left: auto !important;

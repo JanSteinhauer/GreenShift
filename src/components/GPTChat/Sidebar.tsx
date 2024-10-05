@@ -1,4 +1,4 @@
-import SmallSvg from "./SmallSvg";
+import logo from "../../assets/GreenshiftAiLogoCroped.png";
 import './style.css';
 
 const Sidebar = () => {
@@ -10,7 +10,7 @@ const Sidebar = () => {
                     <i className="float-right mt-2 mr-1 far fa-pen-to-square"></i>
                     <span className="d-flex">
                         <span className="gpt-circle-2 text-dark">
-                            <SmallSvg/>
+                            <img src={logo} alt="Greenshift AI Logo" className="img-fluid" />
                         </span>
                         <div className="ml-2 mt-1">
                             <small>New chat</small>
@@ -27,5 +27,5 @@ const Sidebar = () => {
         </>
     );
 }
- 
+
 export default Sidebar;
