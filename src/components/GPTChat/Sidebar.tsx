@@ -14,7 +14,7 @@ const Sidebar: React.FC<AIAgentProps> = ({ selectedChat, setselectedChat }) => {
   const chatOptions = [
     { id: 1, label: "Energy Advisor", imgSrc: energy },
     { id: 2, label: "Waste Advisor", imgSrc: waste },
-    { id: 3, label: "Equipment Advisor", imgSrc: equipment },
+    { id: 3, label: "Sustainablity", imgSrc: equipment },
     { id: 4, label: "Carbon Advisor", imgSrc: carbon },
   ];
 

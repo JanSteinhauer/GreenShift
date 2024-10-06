@@ -21,6 +21,7 @@ body{
 
 .gpt-chat-area{
   background-color: #343541 !important;
+  padding-bottom: 5px;
 }
 .gpt-prompt{
   margin-top: 24vh;

@@ -4,30 +4,9 @@ import Prompt from "./Prompt";
 import Sidebar from "./Sidebar";
 import PromptCard from "./PromptCard";
 import './style.css';
+import { promptBoxes } from "./promptBoxes";
 
 function GPTChat() {
-  const promptBoxes = [
-    {
-      id: 1,
-      title: "Brainstorm incentives",
-      subtitle: "for a customer royalty program in a small bookstore"
-    },
-    {
-      id: 2,
-      title: "Compare storytelling techniques",
-      subtitle: "in novels and in films"
-    },
-    {
-      id: 3,
-      title: "Write a message",
-      subtitle: "that goes with a kitten gif for a friend on a..."
-    },
-    {
-      id: 4,
-      title: "Give me ideas",
-      subtitle: "for what to do with my kids' art"
-    }
-  ];
 
   const [userMessage, setUserMessage] = useState("");
   const [selectedChat, setselectedChat] = useState(0);
@@ -43,6 +22,23 @@ function GPTChat() {
     setUserMessage(UserMessageString);
   };
 
+  const getPromptBoxesByCategory = () => {
+    switch (selectedChat) {
+      case 0:
+        return promptBoxes.standard;
+      case 1:
+        return promptBoxes.energy;
+      case 2:
+        return promptBoxes.waste;
+      case 3:
+        return promptBoxes.sustainability;
+      case 4:
+        return promptBoxes.carbon;
+      default:
+        return promptBoxes.standard;
+    }
+  };
+
   return (
     <>
       <div className="row vh-100">
@@ -51,16 +47,18 @@ function GPTChat() {
         </div>
 
         <div className="col-lg-10 gpt-chat-area text-white">
-          <Prompt selectedChat={selectedChat} />
+          <Prompt selectedChat={selectedChat} setselectedChat={function (chatId: number): void {
+            throw new Error("Function not implemented.");
+          } } />
 
           <div className="container px-6">
             <div className="row">
-              {promptBoxes.map((item) => (
+            {getPromptBoxesByCategory().map((item) => (
                 <PromptCard
                   key={item.id}
                   title={item.title}
                   subtitle={item.subtitle}
-                  onClick={() => handlePromptClick(item.title, item.subtitle)} // Pass the handler
+                  onClick={() => handlePromptClick(item.title, item.subtitle)}
                 />
               ))}
             </div>

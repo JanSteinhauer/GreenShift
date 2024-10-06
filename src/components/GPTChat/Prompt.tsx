@@ -12,7 +12,7 @@ const Prompt: React.FC<AIAgentProps> = ({ selectedChat }) => {
     { id: 0, label: "How can I help you today?", imgSrc: logo },
     { id: 1, label: "Let's talk about your energy challenges!", imgSrc: energy },
     { id: 2, label: "Let's talk about your waste challenges!", imgSrc: waste },
-    { id: 3, label: "Let's talk about your equipment challenges!", imgSrc: equipment },
+    { id: 3, label: "Let's talk about your sustainablity challenges!", imgSrc: equipment },
     { id: 4, label: "Let's talk about your carbon challenges!", imgSrc: carbon },
   ];
 

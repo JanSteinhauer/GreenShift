@@ -1,11 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import LandingPage from './pages/Landingpage'
-import GPTChat from './components/GPTChat/GPTChat'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
 import './components/GPTChat/style.css'
 
 
