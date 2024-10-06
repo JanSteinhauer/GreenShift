@@ -47,7 +47,7 @@ function GPTChat() {
         </div>
 
         <div className="col-lg-10 gpt-chat-area text-white">
-          <Prompt selectedChat={selectedChat} setselectedChat={function (chatId: number): void {
+          <Prompt selectedChat={selectedChat} setselectedChat={function (): void {
             throw new Error("Function not implemented.");
           } } />
 

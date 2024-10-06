@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import logo from '../assets/GreenshiftAiLogo.webp';
@@ -34,7 +34,11 @@ const NavLogo = styled.img`
   height: auto;
 `;
 
-const NavLinks = styled.ul`
+interface NavLinksProps {
+  isOpen: boolean;
+}
+
+const NavLinks = styled.ul<NavLinksProps>`
   display: flex;
   list-style: none;
   margin-top: 0;
@@ -52,6 +56,7 @@ const NavLinks = styled.ul`
     padding: 1rem;
   }
 `;
+
 
 const NavLink = styled(motion.li)`
   margin-left: 2rem;

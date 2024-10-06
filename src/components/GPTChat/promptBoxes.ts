@@ -1,26 +1,27 @@
 export const promptBoxes = {
     standard: [
-        {
-          id: 1,
-          title: "Brainstorm incentives",
-          subtitle: "for a customer royalty program in a small bookstore"
-        },
-        {
-          id: 2,
-          title: "Compare storytelling techniques",
-          subtitle: "in novels and in films"
-        },
-        {
-          id: 3,
-          title: "Write a message",
-          subtitle: "that goes with a kitten gif for a friend on a..."
-        },
-        {
-          id: 4,
-          title: "Give me ideas",
-          subtitle: "for what to do with my kids' art"
-        }
-    ],    
+      {
+        id: 1,
+        title: "Analyze my energy consumption",
+        subtitle: "and suggest ways to reduce my carbon footprint"
+      },
+      {
+        id: 2,
+        title: "Recommend sustainable alternatives",
+        subtitle: "for my business operations and supply chain"
+      },
+      {
+        id: 3,
+        title: "Help me create a waste management plan",
+        subtitle: "for my home or office to minimize waste production"
+      },
+      {
+        id: 4,
+        title: "Guide me through a sustainability report",
+        subtitle: " highlight areas for improvement based on my data"
+      }
+      
+    ],   
     energy: [
       {
         id: 1,
