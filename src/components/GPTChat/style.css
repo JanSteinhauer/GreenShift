@@ -140,7 +140,7 @@ body{
 } */
 .gpt-new-chat-btn:hover{
   background-color: #202123 !important;
-  border-radius: 10px;
+  border-radius: 15px !important;
   cursor: pointer;
 }
 .text-bg{

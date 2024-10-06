@@ -136,11 +136,12 @@ const Button = styled(motion.a)`
   background-color: #2e7d32;
   border-radius: 50px;
   text-align: center;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #a5d6a7;
+    background-color: #66bb6a;
+    color: white !important;
   }
 `;
 
@@ -217,7 +218,7 @@ const LandingPage = () => {
             animate={{ y: 0 }}
             transition={{ type: 'spring', stiffness: 50 }}
           >
-            AI-Powered Sustainability Advisor
+            GenAI-Powered Sustainability Advisor for Companies
           </SubHeader>
           <Button
             href="#get-started"
@@ -291,7 +292,7 @@ const LandingPage = () => {
         <Waitlist />
 
         {/* Call to Action */}
-        <Section id="get-started">
+        {/* <Section id="get-started">
           <Header>Ready to Make a Green Shift?</Header>
           <Text>
             Join us in revolutionizing sustainability practices. Let's work together to create a better, greener future for all.
@@ -303,7 +304,7 @@ const LandingPage = () => {
           >
             Join Waitlist
           </Button>
-        </Section>
+        </Section> */}
       </MainContent>
 
       {/* Footer */}
