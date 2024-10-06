@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import logo from '../assets/GreenshiftAiLogo.webp';
 import GPTChat from '../components/GPTChat/GPTChat';
+import Waitlist from '../components/Waitlist';
 
 // Styled Components
 const Container = styled(motion.div)`
@@ -34,7 +35,7 @@ const NavLinks = styled.ul`
   padding: 0px;
 `;
 
-const NavLink = styled.li`
+const NavLink = styled(motion.li)`
   margin-left: 2rem;
   a {
     color: #ffffff;
@@ -73,7 +74,7 @@ const SubHeader = styled(motion.h2)`
 
 const Text = styled.p`
   font-size: 1rem;
-  color: #4e342e;
+  color: #fffff;
   line-height: 1.6;
   margin-bottom: 1rem;
 `;
@@ -89,7 +90,7 @@ const Button = styled(motion.a)`
   text-decoration: none;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: #1b5e20;
+    background-color: #a5d6a7;
   }
 `;
 
@@ -153,40 +154,37 @@ const LandingPage = () => {
       <Navbar>
         <NavLogo src={logo} alt="GreenShift AI Logo" />
         <NavLinks>
-          <NavLink>
-            <MotionLink 
-              href="#home" 
-              whileHover={{ scale: 1.1 }}  // Subtle pop effect on hover
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
+          <NavLink
+           whileHover={{ scale: 1.1 }}
+           transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <MotionLink>
               Home
             </MotionLink>
+
           </NavLink>
-          <NavLink>
-            <MotionLink 
-              href="#about" 
-              whileHover={{ scale: 1.1 }}  // Subtle pop effect on hover
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
+          <NavLink
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <MotionLink>
               About
             </MotionLink>
           </NavLink>
-          <NavLink>
-            <MotionLink 
-              href="#services" 
-              whileHover={{ scale: 1.1 }}  // Subtle pop effect on hover
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
+          <NavLink
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <MotionLink>
               Services
             </MotionLink>
           </NavLink>
-          <NavLink>
-            <MotionLink 
-              href="#contact" 
-              whileHover={{ scale: 1.1 }}  // Subtle pop effect on hover
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
-              Contact
+          <NavLink
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <MotionLink>
+              Waitlist
             </MotionLink>
           </NavLink>
         </NavLinks>
@@ -292,6 +290,8 @@ const LandingPage = () => {
           </ul>
         </Section>
 
+        <Waitlist />
+
         {/* Call to Action */}
         <Section id="get-started">
           <Header>Ready to Make a Green Shift?</Header>
@@ -299,11 +299,11 @@ const LandingPage = () => {
             Join us in revolutionizing sustainability practices. Let's work together to create a better, greener future for all.
           </Text>
           <Button
-            href="#contact"
+            href="#waitlist"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contact Us
+            Join Waitlist
           </Button>
         </Section>
       </MainContent>
@@ -314,7 +314,7 @@ const LandingPage = () => {
           <a href="#home">Home</a>|
           <a href="#about">About</a>|
           <a href="#services">Services</a>|
-          <a href="#contact">Contact</a>
+          <a href="#waitlist">Waitlist</a>
         </FooterLinks>
         <Text>&copy; {new Date().getFullYear()} GreenShift AI. All rights reserved.</Text>
       </Footer>
