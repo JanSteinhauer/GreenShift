@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import logo from '../assets/GreenshiftAiLogo.webp';
@@ -19,30 +19,72 @@ const Navbar = styled.nav`
   align-items: center;
   background-color: #004d40;
   padding: 1rem 2rem;
+  position: relative;
+
+  @media (max-width: 768px) {
+
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+  }
 `;
 
 const NavLogo = styled.img`
   width: 50px;
   height: auto;
-  
 `;
 
 const NavLinks = styled.ul`
   display: flex;
   list-style: none;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    background-color: #004d40;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem;
+  }
 `;
 
 const NavLink = styled(motion.li)`
   margin-left: 2rem;
+
   a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1rem;
+
     &:hover {
       color: #a5d6a7;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin: 1rem 0;
+  }
+`;
+
+const Hamburger = styled.div`
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
     }
   }
 `;
@@ -74,7 +116,14 @@ const SubHeader = styled(motion.h2)`
 
 const Text = styled.p`
   font-size: 1rem;
-  color: #fffff;
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+`;
+
+const TextTrademark = styled.p`
+  font-size: 1rem;
+  color: white;
   line-height: 1.6;
   margin-bottom: 1rem;
 `;
@@ -89,6 +138,7 @@ const Button = styled(motion.a)`
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s ease;
+
   &:hover {
     background-color: #a5d6a7;
   }
@@ -103,106 +153,58 @@ const Footer = styled.footer`
 
 const FooterLinks = styled.div`
   margin-bottom: 1rem;
+
   a {
     color: #a5d6a7;
     margin: 0 1rem;
     text-decoration: none;
+
     &:hover {
       color: #ffffff;
     }
   }
 `;
 
-const AiChatContainer = styled.div`
-  height: fit-content; /* Automatically adjust height based on content */
-  margin: 0 auto; /* Center the component */
-  overflow: hidden; /* Prevent overflow in case the inner component is large */
-`;
-const AiChatWrapper = styled.div`
-  transform: scale(0.6); /* Still apply visual scaling */
-  transform-origin: top; /* You can adjust the origin as per your needs */
-  height: 100%; /* Maintain the full width */
-`;
-
-// const AiChatContainer = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   max-width: 800px;  /* You can adjust the maximum width if needed */
-//   border-radius: 8px;
-//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-// `;
-
-const MotionLink = styled(motion.a)`
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1rem;
-  &:hover {
-    color: #a5d6a7;
-  }
-`;
-
-const Logo = styled(motion.img)`
-  width: 150px;
-  height: 150px;
-  margin-bottom: 2rem;
-`;
-
 const LandingPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Container>
       {/* Navbar */}
       <Navbar>
         <NavLogo src={logo} alt="GreenShift AI Logo" />
-        <NavLinks>
-          <NavLink
-           whileHover={{ scale: 1.1 }}
-           transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <MotionLink>
-              Home
-            </MotionLink>
+        
+        {/* Hamburger Menu */}
+        <Hamburger onClick={toggleMenu}>
+          <div />
+          <div />
+          <div />
+        </Hamburger>
 
+        <NavLinks isOpen={isOpen}>
+          <NavLink whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <motion.a href="#home">Home</motion.a>
           </NavLink>
-          <NavLink
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <MotionLink>
-              About
-            </MotionLink>
+          <NavLink whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <motion.a href="#about">About</motion.a>
           </NavLink>
-          <NavLink
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <MotionLink>
-              Services
-            </MotionLink>
+          <NavLink whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <motion.a href="#services">Services</motion.a>
           </NavLink>
-          <NavLink
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <MotionLink>
-              Waitlist
-            </MotionLink>
+          <NavLink whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <motion.a href="#waitlist">Waitlist</motion.a>
           </NavLink>
         </NavLinks>
       </Navbar>
 
       {/* Main Content */}
       <MainContent>
-      {/* <GPTChat /> */}
         {/* Hero Section */}
         <Section id="home">
-       
-          {/* <Logo
-            src={logo}
-            alt="GreenShift AI Logo"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
-          /> */}
           <Header
             initial={{ y: -100 }}
             animate={{ y: 0 }}
@@ -225,11 +227,7 @@ const LandingPage = () => {
             Get Started
           </Button>
         </Section>
-        {/* <AiChatContainer>
-  <AiChatWrapper>
-    <AiChat />
-  </AiChatWrapper>
-</AiChatContainer> */}
+
         <GPTChat />
 
         {/* Company Overview */}
@@ -316,7 +314,7 @@ const LandingPage = () => {
           <a href="#services">Services</a>|
           <a href="#waitlist">Waitlist</a>
         </FooterLinks>
-        <Text>&copy; {new Date().getFullYear()} GreenShift AI. All rights reserved.</Text>
+        <TextTrademark>&copy; {new Date().getFullYear()} GreenShift AI. All rights reserved.</TextTrademark>
       </Footer>
     </Container>
   );
