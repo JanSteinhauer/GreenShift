@@ -26,6 +26,10 @@ body{
 .gpt-prompt{
   margin-top: 24vh;
   margin-bottom: 24vh;
+  @media (max-width: 768px) {
+    margin-top: 12vh;
+    margin-bottom: 12vh;
+  }
 }
 .gpt-circle{
   background-color: #fff !important;
@@ -60,16 +64,23 @@ body{
 }
 .gpt-message-box{
   margin-top: 1vh !important;
+   /* Default width is full page width */
   /* margin-left: auto !important;;
   margin-right: auto !important;;
   display: block !important; */
 }
 .pl-5, .px-6 {
   padding-left: 5rem!important;
+  @media (max-width: 768px) {
+    padding-left: 0rem!important;
+  }
 }
 
 .pr-5, .px-6 {
   padding-right: 5rem!important;
+  @media (max-width: 768px) {
+    padding-right: 0rem!important;
+  }
 }
 
 .gpt-extra-small{

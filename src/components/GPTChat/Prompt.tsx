@@ -6,6 +6,11 @@ import energy from "../../assets/Energy.png";
 import equipment from "../../assets/Equipment.png";
 import waste from "../../assets/Waste.png";
 import { AIAgentProps } from "./AIAgentProps";
+import styled from 'styled-components';
+
+const Title = styled.div`
+  
+`;
 
 const Prompt: React.FC<AIAgentProps> = ({ selectedChat }) => {
   const chatOptions = [
@@ -27,6 +32,10 @@ const Prompt: React.FC<AIAgentProps> = ({ selectedChat }) => {
       <h5 className="font-weight-bold mt-3" onClick={() => { console.log(selectedChat) }}>
         {currentOption.label}
       </h5>
+      <Title>
+      GreenShift AI is an innovative platform that leverages artificial intelligence to empower businesses in making eco-friendly decisions. By deploying specialized Large Language Model (LLM) agents, each focusing on different sustainability domains such as energy efficiency, waste management, and sustainable sourcing, we offer personalized, holistic solutions to reduce environmental impact.
+      </Title>
+      
     </div>
   );
 }

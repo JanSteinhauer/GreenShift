@@ -1,6 +1,8 @@
 import './App.css'
 import LandingPage from './pages/Landingpage'
 import './components/GPTChat/style.css'
+// import Dashboard from './pages/Dashboard'
+
 
 
 
@@ -10,6 +12,7 @@ function App() {
   return (
     <>
     <LandingPage/>
+    {/* <Dashboard /> */}
     {/* <GPTChat/> */}
     {/* <AiChat/> */}
       {/* <div>

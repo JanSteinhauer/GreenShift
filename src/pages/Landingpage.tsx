@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import logo from '../assets/GreenshiftAiLogo.webp';
 import GPTChat from '../components/GPTChat/GPTChat';
 import Waitlist from '../components/Waitlist';
+import Dashboard from './Dashboard';
 
 // Styled Components
 const Container = styled(motion.div)`
@@ -101,6 +102,10 @@ const MainContent = styled.main`
 
 const Section = styled.section`
   margin: 2rem 0;
+`;
+
+const SectionOverview = styled.section`
+  margin-top: 12rem;
 `;
 
 const Header = styled(motion.h1)`
@@ -236,25 +241,29 @@ const LandingPage = () => {
 
         <GPTChat />
 
+        
+
         {/* Company Overview */}
-        <Section id="about">
+        <SectionOverview id="about">
           <Header>Company Overview</Header>
           <Text>
             GreenShift AI is an innovative platform that leverages artificial intelligence to empower businesses in making eco-friendly decisions. By deploying specialized Large Language Model (LLM) agents, each focusing on different sustainability domains such as energy efficiency, waste management, and sustainable sourcing, we offer personalized, holistic solutions to reduce environmental impact.
           </Text>
           <Button href="#services">Learn More</Button>
-        </Section>
+        </SectionOverview>
 
         {/* Mission Statement */}
         <Section>
-          <Header>Our Mission</Header>
+          <Header>Our AI Dashboard</Header>
           <Text>
             To accelerate the global shift towards sustainability by providing intelligent, data-driven tools that enable businesses to make environmentally responsible choices while maintaining profitability and competitive advantage.
           </Text>
         </Section>
 
+        <Dashboard />
+
         {/* Objectives */}
-        <Section>
+        {/* <Section>
           <Header>Our Objectives</Header>
           <ul>
             <li>
@@ -273,7 +282,7 @@ const LandingPage = () => {
               </Text>
             </li>
           </ul>
-        </Section>
+        </Section> */}
 
         {/* Unique Value Proposition */}
         <Section>
